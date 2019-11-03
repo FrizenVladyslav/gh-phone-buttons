@@ -1,9 +1,15 @@
-// import `.scss` files
-import './scss/styles.scss';
+import PhoneController from "./js/phone.controller";
+import PhoneModel from "./js/phone.model";
+import PhoneView from "./js/phone.view";
 
-// import UserList class
-import { UserList as defaultExport } from './lib/user-list';
+import "./scss/styles.scss";
 
-// export default UserList class
-// I used `defaultExport` to state that variable name doesn't matter
-export default defaultExport;
+window.addEventListener("load", () => {
+  const model = new PhoneModel();
+  const view = new PhoneView(model, {
+    buttons: document.querySelectorAll(".button"),
+    message: document.querySelector(".message"),
+    resetButton: document.querySelector(".reset-btn")
+  });
+  new PhoneController(model, view);
+});

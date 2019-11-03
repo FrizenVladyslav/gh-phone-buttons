@@ -1,37 +1,67 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>User Application</title>
-    </head>
-    <body>
-        <div id="app"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Phone buttons</title>
+  </head>
 
-        <!-- plugin initialization -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                // create instance of a plugin
-                var elem = document.getElementById('app');
-                var instance = new UserList(elem, [
-                    {firstname: 'Ross', lastname: 'Geller'},
-                    {firstname: 'Monica', lastname: 'Geller'},
-                    {firstname: 'Chandler', lastname: 'Bing'},
-                    {firstname: 'Joey', lastname: 'Tribbiani'},
-                ]);
-
-                // initialize
-                instance.init();
-
-                // add new users
-                setTimeout(function(){
-                    instance.addUser({firstname: 'Rachel', lastname: 'Green'});
-
-                    setTimeout(function(){
-                        instance.addUser({firstname: 'Phoebe', lastname: 'Buffay'});
-                    }, 2000);
-                }, 2000);
-            });
-        </script>
-    <script type="text/javascript" src="./index.js"></script></body>
+  <body>
+    <div class="wrapper" id="app">
+      <div class="instruction">
+        <h3>For write a new message:</h3>
+        <p>
+          Press <strong>0 - 9</strong> or <strong>Backspace</strong> on your
+          keyboard
+        </p>
+        <p>Or Press <strong>buttons</strong> on the phone</p>
+      </div>
+      <div class="phone">
+        <div class="message empty-message">
+          <span>New message...</span>
+        </div>
+        <button class="reset-btn">
+          Reset
+        </button>
+        <div class="buttons">
+          <button class="button" data-key="1">
+            1
+          </button>
+          <button class="button" data-key="2">
+            2 / abc
+          </button>
+          <button class="button" data-key="3">
+            3 / def
+          </button>
+          <button class="button" data-key="4">
+            4 / ghi
+          </button>
+          <button class="button" data-key="5">
+            5 / jkl
+          </button>
+          <button class="button" data-key="6">
+            6 / mno
+          </button>
+          <button class="button" data-key="7">
+            7 / pqrs
+          </button>
+          <button class="button" data-key="8">
+            8 / tuv
+          </button>
+          <button class="button" data-key="9">
+            9 / wxyz
+          </button>
+          <button class="button" data-key="delete">
+            delete
+          </button>
+          <button class="button" data-key="0">
+            0 / _
+          </button>
+          <button class="button" data-key="123/abc">
+            123/abc
+          </button>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="./index.js"></script></body>
 </html>

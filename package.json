@@ -1,24 +1,14 @@
 {
-  "private": true,
-  "name": "js-plugin-starter",
-  "version": "1.0.1",
-  "description": "VanillaJS plugin starter using Webpack",
+  "name": "phone-buttons",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "start": "webpack-dev-server --inline --hot"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thatisuday/js-plugin-starter.git"
-  },
   "keywords": [],
-  "author": "Uday Hiwarale <thatisuday@gmail.com>",
+  "author": "Vladyslav Frizen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thatisuday/js-plugin-starter/issues"
-  },
-  "homepage": "https://github.com/thatisuday/js-plugin-starter#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
