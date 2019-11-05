@@ -16,14 +16,26 @@ export default class PhoneController {
 
     !!this._timeout && clearTimeout(this._timeout);
 
-    if (eKey === "reset") return setPhone({ message: "" });
-    if (eKey === "delete") return setPhone({ message: message.slice(0, -1) });
-    if (eKey === "123/abc") return setPhone({ numMode: !numMode });
-    if (!eKey || (!this._model.buttons[eKey] && eKey !== "1")) return;
-    if (numMode) return setPhone({ message: (message += eKey) });
+    if (eKey === "reset") {
+      return setPhone({ message: "" });
+    }
+    if (eKey === "delete") {
+      return setPhone({ message: message.slice(0, -1) });
+    }
+    if (eKey === "123/abc") {
+      return setPhone({ numMode: !numMode });
+    }
+    if (!eKey || (!this._model.buttons[eKey] && eKey !== "1")) {
+      return;
+    }
+    if (numMode) {
+      return setPhone({ message: (message += eKey) });
+    }
 
     const pressedLetter = this._model.buttons[eKey];
-    if (!pressedLetter) return;
+    if (!pressedLetter) {
+      return;
+    }
     if (key === eKey && eKey !== "0") {
       message =
         message.slice(0, -1) +

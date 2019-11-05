@@ -25,7 +25,9 @@ export default class PhoneView extends EventEmitter {
   };
 
   onKeyDown = ({ key }) => {
-    if (key === "Backspace") this.handleButtonPresseed({ key: "delete" });
+    if (key === "Backspace") {
+      this.handleButtonPresseed({ key: "delete" });
+    } 
   };
 
   renderMessage = () => {
